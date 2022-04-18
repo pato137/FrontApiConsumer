@@ -10,6 +10,7 @@ import { Result} from '../interfaces/user.interface';
 export class UserListComponent implements OnInit {
 
   public users : Result[] = [];
+  public page  : number   = 0;
 
   // INJECTAMOS EL SERVICIO
   constructor( private userService : UserService) { }
@@ -21,8 +22,18 @@ export class UserListComponent implements OnInit {
         this.users = users;
        
        
-       // console.log( users);
+        console.log( users);
       })
-  }
+    }
+    nextPage(){
+      this.page += 1;
+      console.log(this.page)
+    }
+    prevPage(){
+      if( this.page > 0){
+        this.page -= 1;
+        console.log(this.page)
+      }
+    }
 
 }

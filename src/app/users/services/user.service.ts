@@ -9,11 +9,18 @@ import {map} from 'rxjs/operators'
 export class UserService {
 private url : string = ' http://localhost:8082/api';
 
-  constructor( private http : HttpClient) { }
+private urlPage: string =  'http://localhost:8081/api/users/?page=';
 
+private urlPage1: string = 'http://localhost:8081/api/users/?page='; 
+
+//public page : number = 0;
+
+constructor( private http : HttpClient) { }
+// localhost:8081/api/users/?page=1
+//http://localhost:8081/api/users/?page=3
 getAllUser(){
 // HACEMOS LA DEFINICION DE UN OBSERVABLE <OBJECT> ESPERANDO EL SUBSCRIBE
- return this.http.get<FectAllUserResponse>(  `${ this.url }/users-mono/`)
+ return this.http.get<FectAllUserResponse>(  `${ this.urlPage+(page) }`)
             .pipe(
               map( this.TransformResultsToUsers)
             )
