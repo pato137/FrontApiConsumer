@@ -11,28 +11,40 @@ export class UserListComponent implements OnInit {
 
   public users : Result[] = [];
   public page  : number   = 0;
-
+  public pageurl: number =0;
   // INJECTAMOS EL SERVICIO
   constructor( private userService : UserService) { }
 
-  ngOnInit(): void {
-
-    this.userService.getAllUser()
+    ngOnInit(): void {
+     this.userService.getAllUser(this.pageurl)
       .subscribe( users => {
         this.users = users;
-       
-       
+        console.log( users);
+      }) 
+    }
+
+    nextPage(){
+    //  this.page += 10;
+      this.pageurl+=1;
+      // le pasamos al service getAllUser un parametro que sea la sgte pagina
+      this.userService.getAllUser(this.pageurl)
+      .subscribe( users => {
+        this.users = users;
         console.log( users);
       })
+      console.log(" " + this.pageurl)
     }
-    nextPage(){
-      this.page += 1;
-      console.log(this.page)
-    }
+
     prevPage(){
-      if( this.page > 0){
-        this.page -= 1;
-        console.log(this.page)
+      if( this.pageurl > 0){
+       // this.page -= 10;
+        this.pageurl-=1;
+        this.userService.getAllUser(this.pageurl)
+      .subscribe( users => {
+        this.users = users;
+        console.log( users);
+      })
+        console.log(" " + this.pageurl)
       }
     }
 

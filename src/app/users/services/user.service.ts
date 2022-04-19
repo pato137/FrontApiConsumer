@@ -7,20 +7,16 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class UserService {
-private url : string = ' http://localhost:8082/api';
 
 private urlPage: string =  'http://localhost:8081/api/users/?page=';
-
-private urlPage1: string = 'http://localhost:8081/api/users/?page='; 
 
 //public page : number = 0;
 
 constructor( private http : HttpClient) { }
-// localhost:8081/api/users/?page=1
-//http://localhost:8081/api/users/?page=3
-getAllUser(){
+getAllUser(pageurl:number){
 // HACEMOS LA DEFINICION DE UN OBSERVABLE <OBJECT> ESPERANDO EL SUBSCRIBE
- return this.http.get<FectAllUserResponse>(  `${ this.urlPage+(page) }`)
+console.log( `${ this.urlPage+(pageurl) }`)
+ return this.http.get<FectAllUserResponse>(  `${ this.urlPage+(pageurl) }`)
             .pipe(
               map( this.TransformResultsToUsers)
             )
@@ -45,7 +41,6 @@ private TransformResultsToUsers( resp : FectAllUserResponse) : Result[] {
   )
   return userList;
  
-  
 }
 
 }

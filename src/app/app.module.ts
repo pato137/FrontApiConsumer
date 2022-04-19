@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { UserModule } from './users/user.module';
 import  { HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import  { HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
    UserModule,
-   HttpClientModule
+   HttpClientModule,
+   BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

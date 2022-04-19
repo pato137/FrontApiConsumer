@@ -1,56 +1,66 @@
-
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h3>USERS</h3>
-            </div>
-                    <div class="card-body">
-                <table class="table table-header hover table-dark table-striped">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>id</th> 
-                            <th>userName</th>
-                            <th>userSurname</th>
-                            <th>userEmail</th>
-                            <th>userJoinedDate</th>
-                            <th>numVideoConsumedMinutes</th>
-                            <th>lastDateVisit</th>
-                            
-                          
-                            
+<div class="">
+    <div class="row">
+        <div class="col-2">
+            <img src="/assets/img/udemy1.png" alt="logo" id="logo"  width="100%" height="50%">
+        </div> 
+        <div class="col text-center">
+            <img src="/assets/img/accenture-logo.png" alt="logo1" id="logo1" width="70%">
+            <h1 class="text-center"><strong>technology</strong></h1>
+        </div>
+        <div class="col">
+            <nav class="navbar navbar-light col ">
+                <div class="container-fluid ">
+                    <form class="d-flex" id="search">
+                        <input class="form-control me-2 mx-auto" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Search</button><i class="bi bi-search"></i>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="">
+        <div class="card-header">
+            <h3>USERS</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-header hover table-dark table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>id</th> 
+                        <th>userName</th>
+                        <th>userSurname</th>
+                        <th>userEmail</th>
+                        <th>userJoinedDate</th>
+                        <th>numVideoConsumedMinutes</th>
+                        <th>lastDateVisit</th>                          
                         </tr>
-                    </thead>
-                    <tbody>
-                         <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
+                </thead>
+                <tbody>
+                    <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
                    de la CLASS UserListComponent usamos el atributo users para hacer el for
                     -->
-                        <tr *ngFor=" let user of users" class="text-center">
-                                <td> {{user.id}} </td>
-                                <td> {{user.userName}} </td>
-                                <td> {{user.userSurname}} </td>
-                                <td> {{user.userEmail}} </td>
-                                <td> {{user.userJoinedDate}} </td>
-                                <td> {{user.numVideoConsumedMinutes}} </td>
-                                <td> {{user.lastDateVisit}} </td>
-                                
-
+                        <tr *ngFor=" let user of users | filtro:page" class="text-center">
+                            <td> {{user.id}} </td>
+                            <td> {{user.userName}} </td>
+                            <td> {{user.userSurname}} </td>
+                            <td> {{user.userEmail}} </td>
+                            <td> {{user.userJoinedDate}} </td>
+                            <td> {{user.numVideoConsumedMinutes}} </td>
+                            <td> {{user.lastDateVisit}} </td>
                         </tr>
-      
-                     
-                     
                     </tbody>
                 </table>
-                    <div class="text-center">
-                        <button class="btn btn-primary"
+                <div class="text-center">
+                    <button class="btn btn-dark"
                         (click) = "prevPage()"
                         > Prev </button>
                         &nbsp;
-                        <button class="btn btn-primary"
+                    <button class="btn btn-dark"
                         (click) = "nextPage()"
                         > Next </button>
                         
                     
-                    </div>
-            </div>
+                </div>
             </div>
         </div>
+    </div>
