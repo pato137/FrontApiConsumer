@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
-import { Result} from '../interfaces/user.interface';
+import { UserService } from '../../users/services/user.service';
+import { Result} from '../../users/interfaces/user.interface';
 
 @Component({
   selector: 'app-user-list',
@@ -12,6 +12,7 @@ export class UserListComponent implements OnInit {
   public users : Result[] = [];
   public page  : number   = 0;
   public pageurl: number =0;
+  public search:string ='';
   // INJECTAMOS EL SERVICIO
   constructor( private userService : UserService) { }
 
@@ -46,6 +47,10 @@ export class UserListComponent implements OnInit {
       })
         console.log(" " + this.pageurl)
       }
+    }
+
+    onSearchUser(search:string){
+      this.search= search;
     }
 
 }

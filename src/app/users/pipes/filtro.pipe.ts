@@ -6,8 +6,14 @@ import {Result} from '../interfaces/user.interface'
 })
 export class FiltroPipe implements PipeTransform {
 
-  transform(users: Result[], page: number =0): Result[] {
-    return users.slice(page, page+10);
+  transform(users: Result[], page: number =0, search:string=''): Result[] {
+    if(search.length ===0){
+      return users.slice(page, page+10);
+    }
+    
+
+    const filterUsers = users.filter(user => user.userName.includes (search));
+    return filterUsers;
   }
 
 }
