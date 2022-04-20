@@ -13,6 +13,7 @@ export class UserListComponent implements OnInit {
   public page  : number   = 0;
   public pageurl: number =0;
   public search:string ='';
+  
   // INJECTAMOS EL SERVICIO
   constructor( private userService : UserService) { }
 

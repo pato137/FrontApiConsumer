@@ -25,19 +25,20 @@ console.log( `${ this.urlPage+(pageurl) }`)
 //CREAMOS UN METODO PRIVADO Y LE DAMOS LOS PARAMETROS RESP DEL TIPO fETCH...
 private TransformResultsToUsers( resp : FectAllUserResponse) : Result[] {
  
+  
+
   const userList : Result[] = resp.results.map( us => {
-      return {
-                id: us.id,
-                userName: us.userName,
-                userSurname: us.userSurname,
-                userEmail: us.userEmail,
-                userJoinedDate: us.userJoinedDate,
-                numVideoConsumedMinutes: us.numVideoConsumedMinutes,
-                lastDateVisit: us.lastDateVisit
+    return {
+              id: us.id,
+              user_name: us.user_name,
+              user_surname: us.user_surname,
+              user_email: us.user_email,
+              user_joined_date: us.user_joined_date,
+              num_video_consumed_minutes: us.num_video_consumed_minutes,
+              last_date_visit: us.last_date_visit
 
-      }
-  }
-
+    }
+  } 
   )
   return userList;
  

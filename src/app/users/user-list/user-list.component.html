@@ -54,12 +54,12 @@
                     -->
                         <tr *ngFor=" let user of users | filtro:page:search" class="text-center">
                             <!-- <td> {{user.id}} </td> -->
-                            <td> {{user.userName}} </td>
-                            <td> {{user.userSurname}} </td>
-                            <td> {{user.userEmail}} </td>
-                            <td> {{user.userJoinedDate}} </td>
-                            <td> {{user.numVideoConsumedMinutes}} </td>
-                            <td> {{user.lastDateVisit}} </td>
+                            <td> {{user.user_name}} </td>
+                            <td> {{user.user_surname}} </td>
+                            <td> {{user.user_email}} </td>
+                            <td> {{user.user_joined_date}} </td>
+                            <td> {{user.num_video_consumed_minutes}} </td>
+                            <td> {{user.last_date_visit}} </td>
                         </tr>
                     </tbody>
                 </table>

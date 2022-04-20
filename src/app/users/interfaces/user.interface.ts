@@ -9,11 +9,11 @@ export interface FectAllUserResponse {
 
 export interface Result {
     id:                      number;
-    userName:                string;
-    userSurname:             string;
-    userEmail:               string;
-    userJoinedDate:          string;
-    numVideoConsumedMinutes: number;
-    lastDateVisit:           string;
+    user_name:                string;
+    user_surname:             string;
+    user_email:               string;
+    user_joined_date:          string;
+    num_video_consumed_minutes: number;
+    last_date_visit:           string;
 }
 
