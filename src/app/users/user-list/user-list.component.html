@@ -12,7 +12,6 @@
                 <div class="container-fluid ">
                     <form class="d-flex" id="search">
                         <input class="form-control me-2 mx-auto" type="search" placeholder="Search" aria-label="Search" #txtSearch (keyup)="onSearchUser( txtSearch.value)">
-                        <button class="btn btn-outline-dark" type="submit">Search</button><i class="bi bi-search"></i>
                     </form>
                 </div>
             </nav>
@@ -35,17 +34,17 @@
         <div class="card-header">
             <h3>USERS</h3>
         </div>
-        <div class="card-body">
+        <div class="card-body text-center">
             <table class="table table-header hover table-dark table-striped">
                 <thead class="thead-dark">
                     <tr>
                         <!-- <th>id</th> --> 
-                        <th>userName</th>
-                        <th>userSurname</th>
-                        <th>userEmail</th>
-                        <th>userJoinedDate</th>
-                        <th>numVideoConsumedMinutes</th>
-                        <th>lastDateVisit</th>                          
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Email</th>
+                        <th>Joined Date</th>
+                        <th>Consumed Minutes</th>
+                        <th>Last Visit</th>                          
                         </tr>
                 </thead>
                 <tbody>
