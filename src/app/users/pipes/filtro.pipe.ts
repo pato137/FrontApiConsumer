@@ -11,8 +11,12 @@ export class FiltroPipe implements PipeTransform {
       return users.slice(page, page+100);
     }
     
-
-    const filterUsers = users.filter(user => user.user_email.includes (search));
+    const filterUsers = [];
+    for(const post of users){
+      if(post.user_email.toLowerCase().indexOf(search.toLowerCase())> -1){
+        filterUsers.push(post)
+      }
+    }
     return filterUsers;
   }
 
