@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../users/services/user.service';
-import { Result} from '../../users/interfaces/user.interface';
+import { Result } from 'src/app/interfaces/user.interface';
+import { UserService } from '../../../services/user.service';
+
 
 @Component({
   selector: 'app-user-list',
@@ -49,7 +50,6 @@ export class UserListComponent implements OnInit {
         console.log(" " + this.pageurl)
       }
     }
-
     onSearchUser(search:string){
       this.search= search;
     }

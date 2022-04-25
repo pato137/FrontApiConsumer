@@ -10,8 +10,6 @@ export class UserService {
 
 private urlPage: string =  'http://localhost:8081/api/users/?page=';
 
-//public page : number = 0;
-
 constructor( private http : HttpClient) { }
 getAllUser(pageurl:number){
 // HACEMOS LA DEFINICION DE UN OBSERVABLE <OBJECT> ESPERANDO EL SUBSCRIBE
