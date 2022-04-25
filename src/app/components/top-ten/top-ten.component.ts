@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Result } from 'src/app/interfaces/user.interface';
+import { TopTenService } from 'src/app/services/top-ten.service';
 
 @Component({
   selector: 'app-top-ten',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopTenComponent implements OnInit {
 
-  constructor() { }
+  public usersTop : Result[] = [];
+  
+  public search:string ='';
+  
+  // INJECTAMOS EL SERVICIO
+  constructor( private topTenService : TopTenService) { }
 
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {
+     this.topTenService.getAllUserTop()
+      .subscribe( users => {
+        this.usersTop = users;
+        console.log( users);
+      }) 
+    }
 }

@@ -9,12 +9,14 @@ import { LayoutModule } from './layout/layout.module';
 import { PathLearningComponent } from './components/path-learning/path-learning.component';
 import { TopTenComponent } from './components/top-ten/top-ten.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CoursesComponent } from './components/courses/courses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PathLearningComponent,
-    TopTenComponent
+    TopTenComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
