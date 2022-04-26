@@ -12,6 +12,23 @@ export class UserService {
 
   constructor( private http : HttpClient) { }
 
+
+
+
+// DEFINIMOS EL OBSERVABLE PARA OBTENER EL TOTAL DE LAS PAGINAS
+
+  // CREAMOS UN METODO PARA OBTENER LOS USUARIOS HACIENDO LA PETICION A LA URL
+  getTotalPages(){
+    const url = 'http://localhost:8082/users/page/';
+  
+    //AGREGO EL RETURM QUE VA A ESPERAR QUE SE SUSCRIBAN DESDE EL USUARIOS.COMPONENT 
+    //PARA OBTENER LOS DATOS
+    return this.http.get( url );
+  }
+  
+
+
+
   getAllUser(pageurl:number){
   // HACEMOS LA DEFINICION DE UN OBSERVABLE <OBJECT> ESPERANDO EL SUBSCRIBE
   console.log( `${ this.urlPage+(pageurl) }`)
