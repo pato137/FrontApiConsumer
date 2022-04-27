@@ -7,14 +7,14 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class UserService {
-  private urlPage: string =  'http://localhost:8082/users/page/?page=';
+  private urlPage: string =  'http://localhost:8082/users/all/';
 
   constructor( private http : HttpClient) { }
 
   getAllUser(pageurl:number){
   // HACEMOS LA DEFINICION DE UN OBSERVABLE <OBJECT> ESPERANDO EL SUBSCRIBE
   console.log( `${ this.urlPage+(pageurl) }`)
-  return this.http.get<FectAllUserResponse>(  `${ this.urlPage+(pageurl) }`)
+  return this.http.get<FectAllUserResponse>(  `${ this.urlPage }`)
               .pipe(
                 map( this.TransformResultsToUsers)
               )

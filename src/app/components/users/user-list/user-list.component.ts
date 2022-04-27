@@ -20,7 +20,7 @@ export class UserListComponent implements OnInit {
   constructor( private userService : UserService) { }
 
     ngOnInit(): void {
-     this.userService.getAllUser(this.pageurl)
+     this.userService.getAllUser(this.page)
       .subscribe( users => {
         this.users = users;
       })
@@ -32,24 +32,20 @@ export class UserListComponent implements OnInit {
     }
 
     nextPage(){
-    //  this.page += 10;
-      this.pageurl+=1;
+      this.page+=10;
       // le pasamos al service getAllUser un parametro que sea la sgte pagina
-      this.userService.getAllUser(this.pageurl)
+      this.userService.getAllUser(this.page)
       .subscribe( users => {
         this.users = users;
       })
     }
-
     prevPage(){
-      if( this.pageurl > 0){
-       // this.page -= 10;
-        this.pageurl-=1;
-        this.userService.getAllUser(this.pageurl)
+      if( this.page > 0){
+        this.page-=10;
+        this.userService.getAllUser(this.page)
       .subscribe( users => {
         this.users = users;
       })
-        console.log(" " + this.pageurl)
       }
     }
     onSearchUser(search:string){
