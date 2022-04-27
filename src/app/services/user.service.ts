@@ -37,8 +37,7 @@ export class UserService {
                 last_date_visit: us.last_date_visit
 
       }
-    } 
-    )
+    })
     return userList;
   
   }
