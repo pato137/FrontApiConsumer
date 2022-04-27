@@ -1,22 +1,35 @@
+<div class="col">   
+    <input class="form-control me-2 mx-auto" type="search" placeholder="Search e-mail" aria-label="Search" #txtSearch (keyup)="onSearchUser(txtSearch.value)">  
+</div>
 <div class="">
-    <div class="col">   
-        <input class="form-control me-2 mx-auto" type="search" placeholder="Search e-mail" aria-label="Search" #txtSearch (keyup)="onSearchUser(txtSearch.value)">  
+    <div class="card-header">
+        <h3>USERS</h3>
     </div>
-    <div class="    ">
-        <div class="card-header">
-            <h3>USERS</h3>
-        </div>
-        <div class="card-body text-center">
-            <table class="table table-header hover table-dark table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Name</th>
-                        <th>Surname</th>
-                        <th>Email</th>
-                        <th>Joined Date</th>
-                        <th>Consumed Minutes</th>
-                        <th>Last Visit</th>
+    <div class="card-body text-center">
+        <table class="table table-header hover table-dark table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Joined Date</th>
+                    <th>Consumed Minutes</th>
+                    <th>Last Visit</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
+                   de la CLASS UserListComponent usamos el atributo users para hacer el for
+                    -->
+                <tr *ngFor=" let user of users | filtro:page:search" class="text-center">
+                    <td> {{user.user_name}} </td>
+                    <td> {{user.user_surname}} </td>
+                    <td> {{user.user_email}} </td>
+                    <td> {{user.user_joined_date}} </td>
+                    <td> {{user.num_video_consumed_minutes}} </td>
+                    <td> {{user.last_date_visit}} </td>
                     </tr>
+<<<<<<< HEAD
                 </thead>
                 <tbody>
                         <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
@@ -47,8 +60,24 @@
                     &nbsp;
                     <span [ngStyle]=" { 'color' : '#f7f7f7' }">Page {{pageurl+1}} </span> 
             </div>
+=======
+            </tbody>
+        </table>
+        <div class="text-center">
+            <button class="btn btn-dark"
+                (click) = "prevPage()"
+                > Prev </button>
+                &nbsp;
+            <button class="btn btn-dark"
+                [disabled]="pageurl == maxPages"
+                (click) = "nextPage()"
+                > Next </button>  
+                &nbsp;
+                <span [ngStyle]=" { 'color' : '#f7f7f7' }"
+                    >Page {{pageurl+1}} </span> 
+>>>>>>> 0e4febf6742bf5a0745559068f6c69c4fb32c8c1
         </div>
+        
     </div>
 </div>
-
     

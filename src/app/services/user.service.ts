@@ -7,7 +7,6 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class UserService {
-
   private urlPage: string =  'http://localhost:8082/users/page/?page=';
 
   constructor( private http : HttpClient) { }
@@ -23,15 +22,11 @@ export class UserService {
 
   getTotalPages(){
     const url = 'http://localhost:8082/users/page/';
-
     return this.http.get(url);
   }
 
   //CREAMOS UN METODO PRIVADO Y LE DAMOS LOS PARAMETROS RESP DEL TIPO fETCH...
   private TransformResultsToUsers( resp : FectAllUserResponse) : Result[] {
-  
-    
-
     const userList : Result[] = resp.results.map( us => {
       return {
                 user_name: us.user_name,

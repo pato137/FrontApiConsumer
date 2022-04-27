@@ -1,28 +1,25 @@
-<div>
-    <table class="table table-header hover table-dark table-striped text-center">
-        <thead class="thead-dark">
-            <tr>
-                <th>Name</th>
-                <th>Surname</th>
-                <th>Email</th>
-                <th>Joined Date</th>
-                <th>Consumed Minutes</th>
-                <th>Last Visit</th>
+<table class="table table-header hover table-dark table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Joined Date</th>
+            <th>Consumed Minutes</th>
+            <th>Last Visit</th>
+        </tr>
+    </thead>
+    <tbody>
+            <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
+           de la CLASS UserListComponent usamos el atributo users para hacer el for
+            -->
+        <tr *ngFor=" let user of usersTop" class="text-center">
+            <td> {{user.user_name}} </td>
+            <td> {{user.user_surname}} </td>
+            <td> {{user.user_email}} </td>
+            <td> {{user.user_joined_date}} </td>
+            <td> {{user.num_video_consumed_minutes}} </td>
+            <td> {{user.last_date_visit}} </td>
             </tr>
-        </thead>
-        <tbody>
-                <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
-               de la CLASS UserListComponent usamos el atributo users para hacer el for
-                -->
-            <tr *ngFor=" let user of usersTop" class="text-center">
-                <td> {{user.user_name}} </td>
-                <td> {{user.user_surname}} </td>
-                <td> {{user.user_email}} </td>
-                <td> {{user.user_joined_date}} </td>
-                <td> {{user.num_video_consumed_minutes}} </td>
-                <td> {{user.last_date_visit}} </td>
-                </tr>
-        </tbody>
-    </table>
-</div>
-
+    </tbody>
+</table>
