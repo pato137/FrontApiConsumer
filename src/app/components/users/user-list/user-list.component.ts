@@ -14,6 +14,7 @@ export class UserListComponent implements OnInit {
   public page  : number   = 0;
   public pageurl: number =0;
   public search:string ='';
+  public maxPages: number = UserService.length;
   
   // INJECTAMOS EL SERVICIO
   constructor( private userService : UserService) { }
@@ -22,8 +23,12 @@ export class UserListComponent implements OnInit {
      this.userService.getAllUser(this.pageurl)
       .subscribe( users => {
         this.users = users;
-        console.log( users);
-      }) 
+      })
+
+      this.userService.getTotalPages()
+      .subscribe( (resp:any) => {
+        this.maxPages = resp.totalPages.length;
+      });
     }
 
     nextPage(){
@@ -33,9 +38,7 @@ export class UserListComponent implements OnInit {
       this.userService.getAllUser(this.pageurl)
       .subscribe( users => {
         this.users = users;
-        console.log( users);
       })
-      console.log(" " + this.pageurl)
     }
 
     prevPage(){
@@ -45,7 +48,6 @@ export class UserListComponent implements OnInit {
         this.userService.getAllUser(this.pageurl)
       .subscribe( users => {
         this.users = users;
-        console.log( users);
       })
         console.log(" " + this.pageurl)
       }

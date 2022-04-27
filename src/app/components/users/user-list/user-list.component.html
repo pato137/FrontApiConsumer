@@ -37,9 +37,15 @@
                     (click) = "prevPage()"
                     > Prev </button>
                     &nbsp;
-                <button class="btn btn-dark"
+                <!-- <button class="btn btn-dark"
+                    (click) = "nextPage()"
+                    > Next </button> -->
+                    <button class="btn btn-dark"
+                    [disabled]="pageurl == maxPages"
                     (click) = "nextPage()"
                     > Next </button>  
+                    &nbsp;
+                    <span [ngStyle]=" { 'color' : '#f7f7f7' }">Page {{pageurl+1}} </span> 
             </div>
         </div>
     </div>

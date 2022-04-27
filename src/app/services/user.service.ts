@@ -21,6 +21,12 @@ export class UserService {
               )
   }
 
+  getTotalPages(){
+    const url = 'http://localhost:8082/users/page/';
+
+    return this.http.get(url);
+  }
+
   //CREAMOS UN METODO PRIVADO Y LE DAMOS LOS PARAMETROS RESP DEL TIPO fETCH...
   private TransformResultsToUsers( resp : FectAllUserResponse) : Result[] {
   
