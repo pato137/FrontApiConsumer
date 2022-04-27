@@ -8,7 +8,6 @@ export interface FectAllUserResponse {
 }
 
 export interface Result {
-    id:                      number;
     user_name:                string;
     user_surname:             string;
     user_email:               string;

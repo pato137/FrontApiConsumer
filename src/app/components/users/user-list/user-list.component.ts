@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../users/services/user.service';
-import { Result} from '../../users/interfaces/user.interface';
+import { Result } from 'src/app/interfaces/user.interface';
+import { UserService } from '../../../services/user.service';
+
 
 @Component({
   selector: 'app-user-list',
@@ -13,16 +14,33 @@ export class UserListComponent implements OnInit {
   public page  : number   = 0;
   public pageurl: number =0;
   public search:string ='';
+  public  maxPages :number = UserService.length;
   
   // INJECTAMOS EL SERVICIO
   constructor( private userService : UserService) { }
 
     ngOnInit(): void {
+
+    
+
+
+
+
      this.userService.getAllUser(this.pageurl)
       .subscribe( users => {
         this.users = users;
         console.log( users);
       }) 
+
+      this.userService.getTotalPages()
+     
+       .subscribe( (resp:any) => {
+         console.log(resp.totalPages.length);
+        
+         this.maxPages = resp.totalPages.length;
+         console.log( "Paginas totales: "); 
+        
+      });
     }
 
     nextPage(){
@@ -33,6 +51,7 @@ export class UserListComponent implements OnInit {
       .subscribe( users => {
         this.users = users;
         console.log( users);
+        console.log(this.maxPages, "total pages fuera")
       })
       console.log(" " + this.pageurl)
     }
@@ -49,7 +68,6 @@ export class UserListComponent implements OnInit {
         console.log(" " + this.pageurl)
       }
     }
-
     onSearchUser(search:string){
       this.search= search;
     }
