@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './components/users/user-list/user-list.component';
-import { UserModule } from './components/users/user.module';
+import { UserModule} from './components/users/user.module';
 import  { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './layout/layout.module';
@@ -16,7 +16,7 @@ import { CoursesComponent } from './components/courses/courses.component';
     AppComponent,
     PathLearningComponent,
     TopTenComponent,
-    CoursesComponent
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,
