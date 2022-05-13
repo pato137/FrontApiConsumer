@@ -12,3 +12,6 @@ body { margin: auto;  font-family: Roboto, "Helvetica Neue", sans-serif; }
 #search{
     margin:50px auto;
 }
+i{
+    color:white;
+}

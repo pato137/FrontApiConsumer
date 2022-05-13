@@ -10,6 +10,7 @@ import { PathLearningComponent } from './components/path-learning/path-learning.
 import { TopTenComponent } from './components/top-ten/top-ten.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoursesComponent } from './components/courses/courses.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { CoursesComponent } from './components/courses/courses.component';
    BrowserAnimationsModule,
    LayoutModule,
    AppRoutingModule,
-
+   NgxPaginationModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

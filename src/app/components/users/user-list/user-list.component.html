@@ -1,7 +1,7 @@
 <div class="">
     <div class="col">   
-        <input class="form-control me-2 mx-auto" type="search" placeholder="Search e-mail" aria-label="Search" #txtSearch (keyup)="onSearchUser(txtSearch.value)">  
-    </div>
+        <input class="form-control me-2 mx-auto" type="search" placeholder="Search e-mail" aria-label="Search" #txtSearch (keyup)="onSearchUser(txtSearch.value)">
+     </div>
     <div class="    ">
         <div class="card-header">
             <h3>USERS</h3>
@@ -10,11 +10,11 @@
             <table class="table table-header hover table-dark table-striped">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Name</th>
+                        <th (click)="sort('name')">Name &nbsp;<i class="fas fa-sort"></i></th>
                         <th>Surname</th>
                         <th>Email</th>
                         <th>Joined Date</th>
-                        <th>Consumed Minutes</th>
+                        <th (click)="sort('name')">Consumed Minutes &nbsp;<i class="fas fa-sort"></i></th>
                         <th>Last Visit</th>
                     </tr>
                 </thead>
@@ -22,7 +22,9 @@
                         <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
                        de la CLASS UserListComponent usamos el atributo users para hacer el for
                         -->
-                    <tr *ngFor=" let user of users | filtro:page:search" class="text-center">
+                    <tr *ngFor=" let user of users |orderBy: key:reverse|filter:search | paginate: {
+                    itemsPerPage:20,
+                    currentPage:pageurl}" class="text-center">
                         <td> {{user.user_name}} </td>
                         <td> {{user.user_surname}} </td>
                         <td> {{user.user_email}} </td>
@@ -32,20 +34,8 @@
                         </tr>
                 </tbody>
             </table>
-            <div class="text-center">
-                <button class="btn btn-dark"
-                    (click) = "prevPage()"
-                    > Prev </button>
-                    &nbsp;
-                <button class="btn btn-dark"
-                    (click) = "nextPage()"
-                    > Next </button>
-                    <!-- <button class="btn btn-dark"
-                    [disabled]="pageurl == maxPages"
-                    (click) = "nextPage()"
-                    > Next </button> -->  
-                    &nbsp;
-                    <!-- <span [ngStyle]=" { 'color' : '#f7f7f7' }">Page {{pageurl+1}} </span> --> 
+            <div>
+                <pagination-controls (pageChange)=" pageurl=$event"></pagination-controls>
             </div>
         </div>
     </div>
