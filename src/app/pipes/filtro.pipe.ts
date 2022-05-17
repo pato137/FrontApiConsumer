@@ -6,11 +6,7 @@ import { Result } from '../interfaces/user.interface';
   name: 'filtro'
 })
 export class FiltroPipe implements PipeTransform {
-
-  transform(users: Result[], page: number =0, search:string=''): Result[] {
-    if(search.length ===0){
-      return users.slice(page, page+100);
-    }
+  transform(users: Result[],  search:string='',): Result[] {
     
     const filterUsers = [];
     for(const post of users){
@@ -20,5 +16,4 @@ export class FiltroPipe implements PipeTransform {
     }
     return filterUsers;
   }
-
 }

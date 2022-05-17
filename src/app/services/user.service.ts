@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Injectable} from '@angular/core';
+import { HttpClient} from '@angular/common/http';
 import { FectAllUserResponse, Result} from '../interfaces/user.interface';
 import {map} from 'rxjs/operators'
 
@@ -7,25 +7,21 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class UserService {
-  private urlPage: string =  'http://localhost:8082/users/page/?page=';
+  private urlPage: string =  'http://localhost:8082/users/all/';
 
   constructor( private http : HttpClient) { }
 
   getAllUser(pageurl:number){
   // HACEMOS LA DEFINICION DE UN OBSERVABLE <OBJECT> ESPERANDO EL SUBSCRIBE
   console.log( `${ this.urlPage+(pageurl) }`)
-  return this.http.get<FectAllUserResponse>(  `${ this.urlPage+(pageurl) }`)
+  return this.http.get<FectAllUserResponse>(  `${ this.urlPage }`)
               .pipe(
                 map( this.TransformResultsToUsers)
               )
   }
 
-  getTotalPages(){
-    const url = 'http://localhost:8082/users/page/';
-    return this.http.get(url);
-  }
 
-  //CREAMOS UN METODO PRIVADO Y LE DAMOS LOS PARAMETROS RESP DEL TIPO fETCH...
+  //CREAMOS UN METODO PRIVADO Y LE DAMOS LOS PARAMETROS RESP DEL TIPO fect...
   private TransformResultsToUsers( resp : FectAllUserResponse) : Result[] {
     const userList : Result[] = resp.results.map( us => {
       return {
@@ -35,12 +31,8 @@ export class UserService {
                 user_joined_date: us.user_joined_date,
                 num_video_consumed_minutes: us.num_video_consumed_minutes,
                 last_date_visit: us.last_date_visit
-
       }
-    } 
-    )
-    return userList;
-  
+    })
+    return userList; 
   }
-
 }

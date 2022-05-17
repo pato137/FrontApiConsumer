@@ -22,5 +22,7 @@ export class TopTenComponent implements OnInit {
         this.usersTop = users;
         console.log( users);
       }) 
+
+      
     }
 }
