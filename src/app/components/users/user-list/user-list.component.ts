@@ -8,7 +8,6 @@ import { UserService } from '../../../services/user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-
   public users : Result[] = [];
   public page  : number   = 0;
   public pageurl: number =0;
