@@ -5,12 +5,14 @@ import { UserListComponent } from './components/users/user-list/user-list.compon
 import { PathLearningComponent } from './components/path-learning/path-learning.component';
 import { TopTenComponent } from './components/top-ten/top-ten.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 const routes: Routes = [
   {path:'users' , component:UserListComponent},
   {path:'pathLearning' , component:PathLearningComponent},
   {path: 'topTen', component:TopTenComponent},
-  {path: 'courses', component:CoursesComponent}
+  {path: 'courses', component:CoursesComponent},
+  {path: 'popup', component: PopupComponent}
 ];
 
 @NgModule({

@@ -16,3 +16,26 @@ export interface Result {
     last_date_visit:           string;
 }
 
+
+export interface FetchAllCoursesActivity {
+    count:   number;
+    results: ResultCourses[];
+}
+
+export interface ResultCourses {
+    user_name:                    string;
+    user_surname:                 string;
+    user_email:                   string;
+    //user_role:                    string;
+   // course_id:                    number;
+    course_title:                 string;
+    //course_category:              string;
+    //course_duration:              number;
+    //completion_ratio:             number;
+    num_video_consumed_minutes:   number;
+    //course_enroll_date:           string;
+    course_start_date:            string;
+    course_completion_date:       string;
+    course_first_completion_date: string;
+    course_last_accessed_date:    string;
+}

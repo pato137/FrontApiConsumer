@@ -1,0 +1,57 @@
+<div mat-dialog-content> Courses Activity PEPE</div>
+<div mat-dialog-actions>
+
+    <table class="table table-header hover table-dark table-striped">
+        <thead class="thead-dark">
+            <tr class="text-center">
+               
+                <th>Courses</th>
+                <th>Joined Date</th>
+                <th>Consumed Minutes</th>
+                <th>Last Visit</th>
+                <th>Finished Courses</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <!---->
+                <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
+               de la CLASS UserListComponent usamos el atributo users para hacer el for
+                -->
+            <!-- <tr *ngFor=" let curse of curses" class="text-center"> 
+               
+                <td> {{curse.user_name}} </td>
+                <td> {{curse.user_surname}} </td>
+                <td> {{curse.user_email}} </td>
+                <td> {{curse.user_joined_date}} </td>
+                <td> {{curse.num_video_consumed_minutes}} </td>
+                <td> {{curse.last_date_visit}} </td>
+                
+                </tr> -->
+              
+             <tr  class="text-center">
+                <td>Java Beginner</td>
+                <td> 23/03/2020</td>
+                <td> 134 </td>
+                <td>30/05/2021 </td> 
+                <td>OK</td>
+
+           <tr  class="text-center">
+                   
+                <td>Sql server</td>
+                <td> 23/03/2020</td>
+                <td> 30 </td>
+                <td>30/05/2021 </td> 
+                <td>OK</td>
+                
+        </tbody>
+    </table>
+   
+
+</div>
+
+<div class="mt-5">
+    <button mat-button (click)="onClickNO()">OK</button> 
+     <!-- <button mat-button [mat-dialog-close]="true">SI</button>  -->
+</div>
+
