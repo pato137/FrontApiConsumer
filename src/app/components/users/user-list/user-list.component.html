@@ -1,8 +1,9 @@
 <div class="">
-    <div class="col">   
-        <input class="form-control me-2 mx-auto" type="search" placeholder="Search e-mail" aria-label="Search" #txtSearch (keyup)="onSearchUser(txtSearch.value)">
-     </div>
-    <div class="    ">
+    <div class="col">
+        <input class="form-control me-2 mx-auto" type="search" placeholder="Search e-mail" aria-label="Search"
+            #txtSearch (keyup)="onSearchUser(txtSearch.value)">
+    </div>
+    <div class="">
         <div class="card-header">
             <h3>USERS</h3>
         </div>
@@ -19,7 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                        <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
+                    <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
                        de la CLASS UserListComponent usamos el atributo users para hacer el for
                         -->
                     <tr *ngFor=" let user of users |orderBy: key:reverse|filter:search | paginate: {
@@ -31,14 +32,12 @@
                         <td> {{user.user_joined_date}} </td>
                         <td> {{user.num_video_consumed_minutes}} </td>
                         <td> {{user.last_date_visit}} </td>
-                        </tr>
+                    </tr>
                 </tbody>
             </table>
-            <div>
+            <div id="paginator">
                 <pagination-controls (pageChange)=" pageurl=$event"></pagination-controls>
             </div>
         </div>
     </div>
 </div>
-
-    
