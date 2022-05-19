@@ -11,6 +11,8 @@ import { TopTenComponent } from './components/top-ten/top-ten.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoursesComponent } from './components/courses/courses.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PopupComponent } from './components/popup/popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     PathLearningComponent,
     TopTenComponent,
     CoursesComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
    BrowserAnimationsModule,
    LayoutModule,
    AppRoutingModule,
-   NgxPaginationModule 
+   NgxPaginationModule,
+   MatDialogModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
