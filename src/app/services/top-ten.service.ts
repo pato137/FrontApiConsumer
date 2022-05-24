@@ -7,8 +7,11 @@ import { FectAllUserResponse, Result } from '../interfaces/user.interface';
   providedIn: 'root'
 })
 export class TopTenService {
-  private urlPage: string = 'http://localhost:8082/users/top/';
+  //private urlPage: string = 'http://localhost:8082/users/top/';
   //private urlPage2: string = 'http://localhost:8085/user/';
+
+  private urlPage: string = 'http://localhost:8085/user/top/?sort_by=minutes';
+  private urlTopTenCourses: string = 'http://localhost:8085/user/top/?sort_by=courses';
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +24,13 @@ export class TopTenService {
       )
   }
 
+    getTopTenCoursesFinished(){
+
+      return this.http.get<FectAllUserResponse>(`${this.urlTopTenCourses}`)
+        .pipe(
+          map(this.TransformResultsToUsers)
+        )
+    }
 
   /* getAllUserByDates() {
     //requestparam url example
@@ -42,6 +52,7 @@ export class TopTenService {
         user_surname: us.user_surname,
         user_email: us.user_email,
         user_joined_date: us.user_joined_date,
+        num_completed_courses: us.num_completed_courses,
         num_video_consumed_minutes: us.num_video_consumed_minutes,
         last_date_visit: us.last_date_visit
 

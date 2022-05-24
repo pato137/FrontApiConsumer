@@ -6,13 +6,15 @@ import { PathLearningComponent } from './components/path-learning/path-learning.
 import { TopTenComponent } from './components/top-ten/top-ten.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { TopTenCoursesComponent } from './components/top-ten-courses/top-ten-courses.component';
 
 const routes: Routes = [
   {path:'users' , component:UserListComponent},
   {path:'pathLearning' , component:PathLearningComponent},
-  {path: 'topTen', component:TopTenComponent},
+  {path: 'top_ten', component:TopTenComponent},
   {path: 'courses', component:CoursesComponent},
-  {path: 'popup', component: PopupComponent}
+  {path: 'popup', component: PopupComponent},
+  {path: 'top_ten_courses', component: TopTenCoursesComponent }
 ];
 
 @NgModule({

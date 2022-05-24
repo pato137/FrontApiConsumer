@@ -13,6 +13,7 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PopupComponent } from './components/popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TopTenCoursesComponent } from './components/top-ten-courses/top-ten-courses.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     TopTenComponent,
     CoursesComponent,
     PopupComponent,
+    TopTenCoursesComponent,
   ],
   imports: [
     BrowserModule,

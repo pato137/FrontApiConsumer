@@ -23,9 +23,11 @@ export class UserListComponent implements OnInit {
   
   
   // INJECTAMOS EL SERVICIO
-  constructor( private userService : UserService
-    ,    public dialog : MatDialog,
-    private popUpService : PopupService
+  constructor( 
+    
+         private userService : UserService
+    ,    private dialog : MatDialog
+    ,    private popUpService : PopupService
     ) { }
 
     ngOnInit(): void {
