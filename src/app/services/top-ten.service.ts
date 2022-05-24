@@ -7,7 +7,7 @@ import { FectAllUserResponse, Result } from '../interfaces/user.interface';
   providedIn: 'root'
 })
 export class TopTenService {
-  private urlPage: string = 'http://localhost:8082/users/top/';
+  private urlPage: string = 'http://localhost:8085/users/top/?';
   //private urlPage2: string = 'http://localhost:8085/user/';
 
   constructor(private http: HttpClient) { }

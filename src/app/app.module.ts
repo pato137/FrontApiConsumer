@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { UserListComponent } from './components/users/user-list/user-list.component';
-import { UserModule} from './components/users/user.module';
-import  { HttpClientModule} from '@angular/common/http';
+import { UserModule } from './components/users/user.module';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './layout/layout.module';
 import { PathLearningComponent } from './components/path-learning/path-learning.component';
@@ -13,6 +12,7 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PopupComponent } from './components/popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { UploadFilesComponent } from './components/upload-files/upload-files.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +21,17 @@ import { MatDialogModule } from '@angular/material/dialog';
     TopTenComponent,
     CoursesComponent,
     PopupComponent,
+    UploadFilesComponent,
   ],
   imports: [
     BrowserModule,
-   UserModule,
-   HttpClientModule,
-   BrowserAnimationsModule,
-   LayoutModule,
-   AppRoutingModule,
-   NgxPaginationModule,
-   MatDialogModule 
+    UserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    AppRoutingModule,
+    NgxPaginationModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

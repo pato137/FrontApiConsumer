@@ -15,3 +15,11 @@ body { margin: auto;  font-family: Roboto, "Helvetica Neue", sans-serif; }
 i{
     color:white;
 }
+#box-upload{
+    position: relative;
+    margin: 30px;
+}
+#upload{
+    width: 100px;
+    height: 40px;
+}

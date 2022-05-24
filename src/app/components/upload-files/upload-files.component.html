@@ -1,0 +1,17 @@
+<div class="container" id="box-upload">
+    <div class="row">
+        <div class="file-select col-6" id="file1">
+            <input type="file" (change)="selectFile($event)" id="choose-file">
+        </div>
+        <div class="col-6">
+            <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()" id="upload">Upload</button>
+        </div>
+    </div>
+    <div *ngIf="currentFile" class="progress my-3">
+        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+            attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress + '%' }">
+            {{ progress }}%
+        </div>
+    </div>
+    <div *ngIf="message" class="alert alert-secondary" role="alert">{{ message }}</div>
+</div>
