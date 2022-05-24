@@ -15,8 +15,9 @@ export class TopTenComponent implements OnInit {
   
   // INJECTAMOS EL SERVICIO
   constructor( private topTenService : TopTenService) { }
-
+  
     ngOnInit(): void {
+    console.log("working ttcomponenet!!")    
      this.topTenService.getAllUserTop()
       .subscribe( users => {
         this.usersTop = users;

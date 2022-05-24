@@ -10,6 +10,7 @@
             <th>Name</th>
             <th>Surname</th>
             <th>Email</th>
+            <th>Finished</th>
             <th>Consumed Minutes</th>
             <th>Last Visit</th>
         </tr>
@@ -23,8 +24,10 @@
             <td> {{user.user_name}} </td>
             <td> {{user.user_surname}} </td>
             <td> {{user.user_email}} </td>
+            <td> {{user.num_completed_courses}} </td>
             <td> {{user.num_video_consumed_minutes}} </td>
             <td> {{user.last_date_visit}} </td>
             </tr>
     </tbody>
 </table>
+

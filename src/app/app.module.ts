@@ -13,6 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PopupComponent } from './components/popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UploadFilesComponent } from './components/upload-files/upload-files.component';
+import { TopTenCoursesComponent } from './components/top-ten-courses/top-ten-courses.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UploadFilesComponent } from './components/upload-files/upload-files.com
     CoursesComponent,
     PopupComponent,
     UploadFilesComponent,
+    TopTenCoursesComponent,
   ],
   imports: [
     BrowserModule,

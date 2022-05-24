@@ -12,6 +12,7 @@ export interface Result {
     user_surname:             string;
     user_email:               string;
     user_joined_date:          string;
+    num_completed_courses?: any     ;
     num_video_consumed_minutes: number;
     last_date_visit:           string;
 }
