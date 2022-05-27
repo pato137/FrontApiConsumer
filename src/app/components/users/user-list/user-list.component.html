@@ -15,7 +15,9 @@
                         <th>Surname</th>
                         <th>Email</th>
                         <th>Joined Date</th>
-                        <th (click)="sort('name')">Consumed Minutes &nbsp;<i class="fas fa-sort"></i></th>
+                        <th 
+                        (click)="sort('name')">
+                        Consumed Minutes &nbsp;<i class="fas fa-sort"></i></th>
                         <th>Last Visit</th>
                         <th>Activity</th>
                     </tr>
@@ -33,9 +35,9 @@
                         <td> {{user.user_joined_date}} </td>
                         <td> {{user.num_video_consumed_minutes}} </td>
                         <td> {{user.last_date_visit}} </td>
-                        <td>  <button (click)="openDialog()" class="btn btn-primary">+</button>
-                           
-                       </td>
+                        <!-- <td><a routerLink="/popup" class="dropdown-item" href="#">Courses</a> --> 
+                         <td>  <button   (click)="openDialog(user.user_email)" class="btn btn-primary">+</button>   </td>                          
+                      
                         </tr>
                 </tbody>
             </table>

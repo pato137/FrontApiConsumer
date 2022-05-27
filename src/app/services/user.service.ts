@@ -7,7 +7,7 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class UserService {
-  private urlPage: string =  'http://localhost:8082/users/all/';
+  private urlPage: string =  'http://localhost:8084/users/';
 
   constructor( private http : HttpClient) { }
 

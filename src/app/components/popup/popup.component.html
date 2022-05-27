@@ -1,15 +1,29 @@
-<div mat-dialog-content> Courses Activity PEPE</div>
+<div mat-dialog-content> Courses Activity </div>
 <div mat-dialog-actions>
 
     <table class="table table-header hover table-dark table-striped">
         <thead class="thead-dark">
             <tr class="text-center">
-               
+               <!-- 
+                    user_name:   cours.user_name,                 
+      user_surname: cours.user_surname,               
+      user_email:   cours.user_email,                
+      course_title: cours.course_title,
+      completion_ratio:  cours.completion_ratio,
+      num_video_consumed_minutes:   cours.num_video_consumed_minutes,
+      course_enroll_date:  cours.course_enroll_date,
+      course_start_date:   cours.course_start_date,
+      course_completion_date: cours.course_completion_date,
+      course_last_accessed_date:   cours.course_last_accessed_date
+                -->
+                
+                
                 <th>Courses</th>
                 <th>Joined Date</th>
+                <th>Completed %</th>
                 <th>Consumed Minutes</th>
                 <th>Last Visit</th>
-                <th>Finished Courses</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -18,18 +32,20 @@
                 <!-- LLENAMOS LA TABLA CON UN FOR CON LOS USERS
                de la CLASS UserListComponent usamos el atributo users para hacer el for
                 -->
-            <!-- <tr *ngFor=" let curse of curses" class="text-center"> 
+            <tr *ngFor=" let course of courseActivity " class="text-center"> 
                
-                <td> {{curse.user_name}} </td>
-                <td> {{curse.user_surname}} </td>
-                <td> {{curse.user_email}} </td>
-                <td> {{curse.user_joined_date}} </td>
-                <td> {{curse.num_video_consumed_minutes}} </td>
-                <td> {{curse.last_date_visit}} </td>
+                <!-- <td> {{course.user_name}} </td>
+                <td> {{course.user_surname}} </td> -->
+                <td>{{course.course_title}} </td>
+                <!-- <td> {{course.user_email}} </td> -->
+                <td> {{course.user_joined_date}} </td>
+                <td> {{course.completion_ratio}} </td>
+                <td> {{course.num_video_consumed_minutes}} </td>
+                <td> {{course.last_date_visit}} </td>
                 
-                </tr> -->
+                </tr> 
               
-             <tr  class="text-center">
+             <!-- <tr  class="text-center">
                 <td>Java Beginner</td>
                 <td> 23/03/2020</td>
                 <td> 134 </td>
@@ -42,7 +58,7 @@
                 <td> 23/03/2020</td>
                 <td> 30 </td>
                 <td>30/05/2021 </td> 
-                <td>OK</td>
+                <td>OK</td> -->
                 
         </tbody>
     </table>
@@ -51,6 +67,7 @@
 </div>
 
 <div class="mt-5">
+    
     <button mat-button (click)="onClickNO()">OK</button> 
      <!-- <button mat-button [mat-dialog-close]="true">SI</button>  -->
 </div>
