@@ -11,17 +11,16 @@ export class DownloadReportsComponent implements OnInit {
   constructor(private downloadReportService:DownloadReportService) { }
 
   downloadReport():void{
-    this.downloadReportService.downloadReport()
+    /* this.downloadReportService.downloadReport()
     .subscribe(resp =>{
-      /* let fileName = resp.headers.get('')
+      let fileName = resp.headers.get('')
       ?.split(';')[1].split('=')[1];
       let blob:Blob=resp.body as Blob;
       let a= document.createElement('a');
       a.download = fileName;
       a.href = window.URL.createObjectURL(blob);
-      a.click(); */
-      
-    })
+      a.click();
+    }) */
   }
 
   ngOnInit(): void {
