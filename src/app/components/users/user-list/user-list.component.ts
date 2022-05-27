@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
   public search: any;
   public maxPages: number = UserService.length;
   public totalRecords: string = '';
-  public curses: any = [];
+  public courses: any = [];
   public urlCourses: string = 'http://localhost:8083/user-course-activity/';
 
   // INJECTAMOS EL SERVICIO
@@ -41,19 +41,21 @@ export class UserListComponent implements OnInit {
   //método para orderBy
   key = 'name';
   reverse: boolean = true;
-  sort(key: string) {
+  sort(key: any) {
     this.key = key;
     this.reverse = !this.reverse;
   }
-  public openDialog(): void {
+
+
+  public openDialog(userEmail: string): void {
     const dialogRef = this.dialog.open(PopupComponent, {
       width: '80%',
       data: 'mostrando Dialog'
     });
-    this.popUpService.getCoursesActivity(this.urlCourses)
+    this.popUpService.getCoursesActivity(userEmail)
       .subscribe(resp => {
-        console.log(resp.results, "get start!!");
-        this.curses = resp.results;
+        console.log(resp, "get start!!");
+        this.courses = resp;
 
       });
     dialogRef.afterClosed().subscribe(res => {
