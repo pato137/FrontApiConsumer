@@ -1,0 +1,39 @@
+<div class="container">
+    <div id="box-upload">
+        <div class="row align-items-center">
+            <div class="div_file col-6 col-sm-4" id="file1">
+                <p class="text">Select file csv</p>
+                <input type="file" (change)="selectFileCsv($event)" id="choose-file">
+            </div>
+            <div class="col-6 col-sm-4">
+                <button class="btn btn-success btn-sm" [disabled]="!selectedFilesCsv" (click)="uploadCsv()" id="upload">Upload</button>
+            </div>
+        </div>
+        <div *ngIf="currentFileCsv" class="progress my-3">
+            <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                attr.aria-valuenow="{{ progressCsv }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progressCsv + '%' }">
+                {{ progressCsv }}%
+            </div>
+        </div>
+        <div *ngIf="messageCsv" class="alert alert-secondary" role="alert">{{ messageCsv }}</div>
+    </div>
+
+    <div id="box-upload">
+        <div class="row align-items-center">
+            <div class="div_file col-6 col-sm-3" id="file1">
+                <p class="text">Select file json</p>
+                <input type="file" (change)="selectFileJson($event)" id="choose-file">
+            </div>
+            <div class="col-6 col-sm-3">
+                <button class="btn btn-success btn-sm" [disabled]="!selectedFilesJson" (click)="uploadJson()" id="upload">Upload</button>
+            </div>
+        </div>
+        <div *ngIf="currentFileJson" class="progress my-3">
+            <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                attr.aria-valuenow="{{ progressJson }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progressJson + '%' }">
+                {{ progressJson }}%
+            </div>
+        </div>
+        <div *ngIf="messageJson" class="alert alert-secondary" role="alert">{{ messageJson }}</div>
+    </div>
+</div>

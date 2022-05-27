@@ -1,25 +1,27 @@
-<div>  
-    <ul class="nav nav-pills bg-dark p-2" style="--bs-bg-opacity: .8;">
-        <li class="nav-item">
-            <a class="nav-link text-light me-3"  href="#" routerLink="/users" routerLinkActive="active">Users</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-light me-3" href="#" routerLink="/pathLearning" routerLinkActive="active">Learning Path</a>
-        </li>
-        <li class="nav-item">
-            <!-- <a class="nav-link text-light me-3" href="#" routerLink="/topTen" routerLinkActive="active">Top 10</a>
-             --><div class="dropdown">
-                <a class="nav-link text-light me-3 dropdown-toggle"  routerLinkActive="active" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Top 10
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a  class="dropdown-item" routerLink="/top_ten" href="#">Minutes</a></li>
-                  <li><a routerLink="/top_ten_courses" class="dropdown-item" href="#">Courses</a></li>
-                </ul>
-              </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-light me-3" href="#" routerLink="/courses" routerLinkActive="active">Courses Activity</a>
-        </li>
-    </ul>
+<div>
+  <ul class="nav nav-pills bg-dark p-2" style="--bs-bg-opacity: .8;">
+    <li class="nav-item">
+      <a class="nav-link text-light me-3" href="#" routerLink="/users" routerLinkActive="active">Users</a>
+    </li>
+    <li class="nav-item">
+      <!-- <a class="nav-link text-light me-3" href="#" routerLink="/topTen" routerLinkActive="active">Top 10</a>
+             -->
+      <div class="dropdown">
+        <a class="nav-link text-light me-3 dropdown-toggle" routerLinkActive="active" type="button"
+          id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Top 10
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" routerLink="/top_ten" href="#">Minutes</a></li>
+          <li><a routerLink="/top_ten_courses" class="dropdown-item" href="#">Courses</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light me-3" href="#" routerLink="/upload-file" routerLinkActive="active">Upload files</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light me-3" href="#" routerLink="/download-report" routerLinkActive="active">Download reports</a>
+    </li>
+  </ul>
 </div>

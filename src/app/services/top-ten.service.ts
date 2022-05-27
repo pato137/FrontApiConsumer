@@ -24,13 +24,13 @@ export class TopTenService {
       )
   }
 
-    getTopTenCoursesFinished(){
+  getTopTenCoursesFinished() {
 
-      return this.http.get<FectAllUserResponse>(`${this.urlTopTenCourses}`)
-        .pipe(
-          map(this.TransformResultsToUsers)
-        )
-    }
+    return this.http.get<FectAllUserResponse>(`${this.urlTopTenCourses}`)
+      .pipe(
+        map(this.TransformResultsToUsers)
+      )
+  }
 
   /* getAllUserByDates() {
     //requestparam url example
