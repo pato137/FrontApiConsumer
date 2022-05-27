@@ -14,6 +14,7 @@ import { PopupComponent } from './components/popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UploadFilesComponent } from './components/upload-files/upload-files.component';
 import { TopTenCoursesComponent } from './components/top-ten-courses/top-ten-courses.component';
+import { DownloadReportsComponent } from './components/download-reports/download-reports.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TopTenCoursesComponent } from './components/top-ten-courses/top-ten-cou
     PopupComponent,
     UploadFilesComponent,
     TopTenCoursesComponent,
+    DownloadReportsComponent,
   ],
   imports: [
     BrowserModule,

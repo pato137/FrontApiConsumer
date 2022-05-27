@@ -9,71 +9,86 @@ import { UploadFileService } from 'src/app/services/upload-file.service';
   styleUrls: ['./upload-files.component.css']
 })
 export class UploadFilesComponent implements OnInit {
-  // PRIMERA PRUEBA
-  /* name: string = "";
-  file: any;
-  constructor(private http: HttpClient) { }
-
-  getFile(event:any){
-    this.file = event.target.files;
-    console.log('file', this.file)
-  }
-
-  submitData(){
-    // create formData object
-    let formData = new FormData();
-    formData.set('file', this.file);
-
-    // submit this data in API
-    this.http
-    .post('http://localhost:8086/import-counselee/?file=',formData)
-    .subscribe((response) =>{});
-  } */
-
-  // SEGUNDA PRUEBA
-  selectedFiles?: FileList;
-  currentFile?: File;
-  progress = 0;
-  message = '';
+  selectedFilesCsv?: FileList;
+  selectedFilesJson?: FileList
+  currentFileCsv?: File;
+  currentFileJson?: File;
+  progressCsv = 0;
+  progressJson = 0;
+  messageCsv = '';
+  messageJson = '';
   fileInfos?: Observable<any>;
 
   constructor(private uploadService: UploadFileService) { }
 
-  selectFile(event: any): void {
-    this.selectedFiles = event.target.files;
+  selectFileCsv(event: any): void {
+    this.selectedFilesCsv = event.target.files;
   }
 
-  upload(): void {
-    this.progress = 0;
-    if (this.selectedFiles) {
-      const file: File | null = this.selectedFiles.item(0);
+  uploadCsv(): void {
+    this.progressCsv = 0;
+    if (this.selectedFilesCsv) {
+      const file: File | null = this.selectedFilesCsv.item(0);
       if (file) {
-        this.currentFile = file;
-        this.uploadService.upload(this.currentFile).subscribe({
+        this.currentFileCsv = file;
+        this.uploadService.uploadCsv(this.currentFileCsv).subscribe({
           next: (event: any) => {
             if (event.type === HttpEventType.UploadProgress) {
-              this.progress = Math.round(100 * event.loaded / event.total);
+              this.progressCsv = Math.round(100 * event.loaded / event.total);
             } else if (event instanceof HttpResponse) {
-              this.message = event.body.message;
+              this.messageCsv = event.body.messageCsv;
               // this.fileInfos = this.uploadService.getFiles();
             }
           },
           error: (err: any) => {
             console.log(err);
-            this.progress = 0;
-            if (err.error && err.error.message) {
-              this.message = err.error.message;
+            this.progressCsv = 0;
+            if (err.error && err.error.messageCsv) {
+              this.messageCsv = err.error.messageCsv;
             } else {
-              this.message = 'Could not upload the file!';
+              this.messageCsv = 'Could not upload the file!';
             }
-            this.currentFile = undefined;
+            this.currentFileCsv = undefined;
           }
         });
       }
-      this.selectedFiles = undefined;
+      this.selectedFilesCsv = undefined;
     }
   }
 
+  selectFileJson(event: any): void {
+    this.selectedFilesJson = event.target.files;
+  }
+  uploadJson(): void {
+    this.progressJson = 0;
+    if (this.selectedFilesJson) {
+      const file: File | null = this.selectedFilesJson.item(0);
+      if (file) {
+        this.currentFileJson = file;
+        this.uploadService.uploadJson(this.currentFileJson).subscribe({
+          next: (event: any) => {
+            if (event.type === HttpEventType.UploadProgress) {
+              this.progressJson = Math.round(100 * event.loaded / event.total);
+            } else if (event instanceof HttpResponse) {
+              this.messageJson = event.body.messageJson;
+              // this.fileInfos = this.uploadService.getFiles();
+            }
+          },
+          error: (err: any) => {
+            console.log(err);
+            this.progressJson = 0;
+            if (err.error && err.error.message) {
+              this.messageJson = err.error.messageJson;
+            } else {
+              this.messageJson = 'Could not upload the file!';
+            }
+            this.currentFileJson = undefined;
+          }
+        });
+      }
+      this.selectedFilesJson = undefined;
+    }
+  }
   ngOnInit(): void {
     // this.fileInfos = this.uploadService.getFiles();
   }

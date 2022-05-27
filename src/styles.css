@@ -15,11 +15,33 @@ body { margin: auto;  font-family: Roboto, "Helvetica Neue", sans-serif; }
 i{
     color:white;
 }
-#box-upload{
-    position: relative;
-    margin: 30px;
-}
 #upload{
     width: 100px;
-    height: 40px;
+    height: 35px;
+    border-radius: 10px;
+}
+.text{
+    text-align: center;
+    color: white;
+}
+.div_file{
+    position: relative;
+    margin: 30px;
+    padding: 5px;
+    width: 200px;
+    height: 35px;
+    background-color: rgba(33, 176, 219, 0.758);  
+    border-radius: 10px;
+    cursor: hand;
+}
+#choose-file{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
 }

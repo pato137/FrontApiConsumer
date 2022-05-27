@@ -7,6 +7,7 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { UploadFilesComponent } from './components/upload-files/upload-files.component';
 import { TopTenCoursesComponent } from './components/top-ten-courses/top-ten-courses.component';
+import { DownloadReportsComponent } from './components/download-reports/download-reports.component';
 
 const routes: Routes = [
   {path:'users' , component:UserListComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'top_ten', component:TopTenComponent},
   {path: 'courses', component:CoursesComponent},
   {path: 'popup', component: PopupComponent},
-  {path: 'top_ten_courses', component: TopTenCoursesComponent }
+  {path: 'top_ten_courses', component: TopTenCoursesComponent },
+  {path: 'download-report', component:DownloadReportsComponent}
 ];
 
 @NgModule({
