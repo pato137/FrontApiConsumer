@@ -10,6 +10,6 @@ export class DownloadReportService {
 
   public downloadReport(){
     return this.HttpClient.get("http://localhost:8087/users-unfinished/download",
-    {responseType: 'blob'})
+    {observe: 'response', responseType: 'blob'})
   }
 }
